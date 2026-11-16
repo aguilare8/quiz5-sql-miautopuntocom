@@ -1,13 +1,12 @@
 -- =====================================================================
--- Quiz #5 - SQL | CE 2103 Algoritmos y Estructuras de Datos II
--- Script DML: Parte 3 (datos de prueba) de MiAutoPuntoCom
--- Requiere haber ejecutado antes 01_ddl.sql
+-- Script DML: Parte 3 (datos de prueba)
+-- Antes se tuvo que ejecutar 01_ddl.sql
 -- =====================================================================
 
 USE MiAutoPuntoCom;
 
 -- ---------------------------------------------------------------------
--- 10 vehículos (variedad de marcas, modelos, tipos y estados)
+-- 10 vehículos (marcas, modelos, tipos, estados)
 -- ---------------------------------------------------------------------
 INSERT INTO Vehiculos (marca, modelo, anio, color, precio, vin, tipo, estado) VALUES
 ('Toyota',    'Corolla', 2023, 'Blanco',   24500.00, '1HGCM82633A004352', 'Sedán',     'Nuevo'),
@@ -33,7 +32,7 @@ INSERT INTO Clientes (nombre, apellido, cedula, telefono, email, direccion) VALU
 ('Diego',  'Araya',   '6-0345-0782', '8901-7765', 'diego.araya@example.com',   'Puntarenas, Esparza, Barrio San Juan');
 
 -- ---------------------------------------------------------------------
--- 4 vendedores (todos mayores de 21 años)
+-- 4 vendedores (mayores de 21 años)
 -- ---------------------------------------------------------------------
 INSERT INTO Vendedores (nombre, apellido, cedula, fecha_nacimiento, fecha_contratacion, comision_porcentual) VALUES
 ('Andrea', 'Chaves',   '1-1100-0234', '1990-03-14', '2019-02-01', 3.50),
@@ -43,8 +42,8 @@ INSERT INTO Vendedores (nombre, apellido, cedula, fecha_nacimiento, fecha_contra
 
 -- ---------------------------------------------------------------------
 -- 8 ventas
--- - Andrea: 3 ventas | Luis: 2 | Sofía: 2 | Mateo: 1
--- - Los vehículos 9 y 10 quedan SIN vender (disponibles)
+-- - Andrea: 3 ventas, Luis: 2, Sofía: 2, Mateo: 1
+-- - Los vehículos 9 y 10 quedan sin vender (disponibles)
 -- - Las fechas son relativas a hoy, así la consulta del "último mes"
 --   siempre devuelve resultados al ejecutarla
 -- ---------------------------------------------------------------------

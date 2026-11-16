@@ -1,6 +1,5 @@
 -- =====================================================================
--- Quiz #5 - SQL | CE 2103 Algoritmos y Estructuras de Datos II
--- Script DDL: Partes 1 y 2 (tablas + restricciones) de MiAutoPuntoCom
+-- Script DDL: Partes 1 y 2 (tablas y restricciones)
 -- =====================================================================
 
 DROP DATABASE IF EXISTS MiAutoPuntoCom;
@@ -50,7 +49,6 @@ CREATE TABLE Clientes (
 
 -- ---------------------------------------------------------------------
 -- Tabla: Vendedores
--- (se agrega fecha_nacimiento para poder validar la edad mínima de 21 años)
 -- ---------------------------------------------------------------------
 CREATE TABLE Vendedores (
     id_vendedor         INT UNSIGNED  NOT NULL AUTO_INCREMENT,
@@ -67,7 +65,7 @@ CREATE TABLE Vendedores (
 ) ENGINE = InnoDB;
 
 -- ---------------------------------------------------------------------
--- Tabla: Ventas (normalizada: referencia a las otras tres tablas)
+-- Tabla: Ventas
 -- ---------------------------------------------------------------------
 CREATE TABLE Ventas (
     id_venta     INT UNSIGNED  NOT NULL AUTO_INCREMENT,
@@ -92,14 +90,8 @@ CREATE TABLE Ventas (
         ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE = InnoDB;
 
--- ---------------------------------------------------------------------
--- Validaciones que dependen de la fecha actual
--- MySQL NO permite CURDATE()/NOW()/YEAR(CURDATE()) dentro de un CHECK
--- (no son funciones deterministas), por eso se implementan con triggers.
--- ---------------------------------------------------------------------
 DELIMITER $$
 
--- El año del vehículo no puede ser mayor al año actual
 CREATE TRIGGER trg_vehiculos_anio_bi
 BEFORE INSERT ON Vehiculos
 FOR EACH ROW

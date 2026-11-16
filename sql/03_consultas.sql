@@ -1,7 +1,6 @@
 -- =====================================================================
--- Quiz #5 - SQL | CE 2103 Algoritmos y Estructuras de Datos II
--- Script de Consultas: Parte 4 de MiAutoPuntoCom
--- Requiere haber ejecutado antes 01_ddl.sql y 02_dml.sql
+-- Script de Consultas: Parte 4
+-- Antes se tuvo que haber ejecutado 01_ddl.sql y 02_dml.sql
 -- =====================================================================
 
 USE MiAutoPuntoCom;
@@ -68,7 +67,6 @@ ORDER BY ve.fecha_venta DESC;
 
 -- ---------------------------------------------------------------------
 -- 6. Comisión ganada por cada vendedor basada en sus ventas
---    comisión = suma(precio_final) * comision_porcentual / 100
 -- ---------------------------------------------------------------------
 SELECT CONCAT(vd.nombre, ' ', vd.apellido)                               AS vendedor,
        vd.comision_porcentual                                            AS porcentaje,
@@ -94,7 +92,7 @@ ORDER BY promedio_precio_final DESC;
 
 -- ---------------------------------------------------------------------
 -- 8. Marca de vehículo que se ha vendido más veces
---    (devuelve todas las marcas en caso de empate)
+--    (devuelve todas las marcas si hay empate)
 -- ---------------------------------------------------------------------
 SELECT v.marca, COUNT(*) AS veces_vendida
 FROM Ventas ve
