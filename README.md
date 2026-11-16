@@ -9,7 +9,7 @@
 Abrir MySQL Workbench, conectarse al servidor local y ejecutar los scripts en orden: 01, 02 y 03.
 
 ## Capturas de resultados
-##
+###
 ![Imagen 1](./capturas/Captura%20de%20pantalla%202026-11-16%20084809.png)
 
 ## Imagen 2
