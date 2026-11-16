@@ -1,4 +1,4 @@
-# quiz5-sql-miautopuntocom
+# quiz 5 SQL - miautopuntocom
 ## Contenido
 - `sql/01_ddl.sql`: creación de la base de datos, tablas y restricciones (Partes 1 y 2).
 - `sql/02_dml.sql`: datos de prueba (Parte 3).
